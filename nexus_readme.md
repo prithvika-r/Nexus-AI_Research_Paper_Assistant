@@ -85,20 +85,23 @@ npm install
 # Database
 DB_USER=postgres
 DB_HOST=localhost
-DB_NAME=researchpaper_ai
-DB_PASSWORD=your_password
+DB_NAME=nexus
+DB_PASSWORD=postgress
 DB_PORT=5432
 
 # APIs
-GROQ_API_KEY=gsk_your_key_here
+GROQ_API_KEY=gsk_0j20cU...
+ANTHROPIC_API_KEY=sk-ant-api03-JwZVAeb8zdRaebm...
 PORT=5000
 NODE_ENV=development
 ```
 
 **`/client/.env.local`**
 ```env
-VITE_CLERK_PUBLISHABLE_KEY=pk_test_your_key_here
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_cG9zaXRpd...
 ```
+
+**Note:** Never commit `.env` files to GitHub! They contain secrets. Use `.env.example` instead for reference.
 
 #### 3. Database Setup
 ```bash
@@ -255,15 +258,16 @@ git push origin main
 
 **Railway Backend**
 ```env
-DATABASE_URL=postgresql://user:pass@railway-host:5432/db
-GROQ_API_KEY=gsk_your_key
+DATABASE_URL=postgresql://user:pass@railway-host:5432/nexus
+GROQ_API_KEY=gsk_0j20cU...
+ANTHROPIC_API_KEY=sk-ant-api03-JwZVAeb8zdRaebm...
 PORT=8080
 NODE_ENV=production
 ```
 
 **Vercel Frontend**
 ```env
-VITE_CLERK_PUBLISHABLE_KEY=pk_live_your_key
+VITE_CLERK_PUBLISHABLE_KEY=pk_live_your_key (production key)
 VITE_API_URL=https://your-railway-backend.railway.app/api
 ```
 
