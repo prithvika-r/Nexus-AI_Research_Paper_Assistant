@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "node tests/verification.test.mjs",
+    "test:extraction": "node tests/extraction.test.mjs",
+    "test:rag": "node tests/evaluate-rag.mjs",
+    "test:all": "node tests/verification.test.mjs && node tests/extraction.test.mjs",
+    "migrate": "node db/migrate-rag.mjs && node db/migrate-retrieval.mjs",
+    "db:setup": "node db/setup-vector.mjs && npm run migrate",
+    "reindex": "node scripts/reindexAll.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@google/generative-ai": "^0.24.1",
+    "@huggingface/transformers": "^4.3.0",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "groq-sdk": "^0.37.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.4",
+    "pdfjs-dist": "^6.4.299",
+    "pg": "^8.11.0",
+    "pgvector": "^0.3.0"
+  }
+}
